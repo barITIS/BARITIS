@@ -1,26 +1,17 @@
 {
   "short_name": "ITSBAR",
   "name": "ITSBAR",
-  "description": "ORDER ",
+  "description": "ORDER",
   "scope": "/",
   "icons": [
+
     {
-      "src": "img2x.jpg",
-      "sizes": "96x96",
-      "type": "image/jpg"
-    },
-    {
-      "src": "img3x.jpg",
-      "sizes": "144x144",
-      "type": "image/jpg"
-    },
-    {
-      "src": "img4x.jpg",
+      "src": "images/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/jpg"
+      "type": "image/png"
     },
     {
-      "src": "img6x.jpg",
+      "src": "images/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/jpg"
     }
