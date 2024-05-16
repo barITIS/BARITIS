@@ -129,9 +129,8 @@ margin-top: 100px;
   }
  #pulsanteVisualizza {
     display: flex;
-    position: relative;
-    top: 60px;
-    align-items: center;
+position: relative;
+top: 70px;
     justify-content: center;
     gap: 10px;
     font-family: inherit;

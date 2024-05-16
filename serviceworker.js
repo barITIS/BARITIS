@@ -18,6 +18,23 @@ self.addEventListener('install', function(event) {
       })
   );
 });
+// Ascolta l'evento fetch e risponde con la risorsa corrispondente
+self.addEventListener('fetch', function (event) {
+  event.respondWith(caches.match(event.request)
+      .then(function (response) {
+          // Se è in cache, risponde con la cache
+          if (response) {
+              return response;
+          }
+          // Altrimenti fa una richiesta di rete e aggiunge la risorsa alla cache per richieste future
+          return fetch(event.request).then(function (response) {
+              return caches.open('cache').then(function (cache) {
+                  cache.put(event.request.url, response.clone());
+                  return response;
+              });
+          });
+      }));
+});
 
 self.addEventListener('fetch', function(event) {
   // Gestione delle richieste di rete e della cache
