@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 
@@ -14,6 +13,9 @@
 </head>
 
 <body>
+    <div class="banner">
+        <p>Offerta speciale! Ottieni il 20% di sconto su tutti gli ordini fino al 31 maggio. Approfittane ora!</p>
+    </div>
     <header>
         <!-- Barra di navigazione -->
         <img src="immagini/logo.png" class="logo" alt="logo">
@@ -29,17 +31,12 @@
         </ul>
     </header>
     <br><br>
-  
-        <p align ='center'><button id="pulsanteVisualizza" onclick="visualizza()">MENU PRODOTTI</button></p>
-   
+    <p align='center'><button id="pulsanteVisualizza" onclick="visualizza()">MENU PRODOTTI</button></p>
     <section class="categoria" id="categoria" style="display:none;">
         <div class="categoria-container">
             <div class="box">
                 <div class="categoria-img">
                     <img src="IMGCATEGORIA/cornetto.png" alt="">
-                </div>
-                <div class="stelline">
-                    <!-- Stelline o valutazione del prodotto... -->
                 </div>
                 <h2>Cornetti</h2>
                 <button id="pulsanteVisualizzaCornetti" onclick="visualizzaProdotti('cornetti')" class="btm">Visualizza
@@ -50,9 +47,6 @@
                 <div class="categoria-img">
                     <img src="IMGCATEGORIA/bevande.png" alt="">
                 </div>
-                <div class="stelline">
-                    <!-- Stelline o valutazione del prodotto... -->
-                </div>
                 <h2>Bevande</h2>
                 <button id="pulsanteVisualizzaBevande" onclick="visualizzaProdotti('bevande')" class="btm">Visualizza
                     Bevande</button>
@@ -61,9 +55,6 @@
             <div class="box">
                 <div class="categoria-img">
                     <img src="IMGCATEGORIA/pizza.png" alt="">
-                </div>
-                <div class="stelline">
-                    <!-- Stelline o valutazione del prodotto... -->
                 </div>
                 <h2>Pizze</h2>
                 <button id="pulsanteVisualizzaPizze" onclick="visualizzaProdotti('pizze')" class="btm">Visualizza
@@ -74,9 +65,6 @@
                 <div class="categoria-img">
                     <img src="IMGCATEGORIA/panini.png" alt="">
                 </div>
-                <div class="stelline">
-                    <!-- Stelline o valutazione del prodotto... -->
-                </div>
                 <h2>Panini</h2>
                 <button id="pulsanteVisualizzaPanini" onclick="visualizzaProdotti('panini')" class="btm">Visualizza
                     Panini</button>
@@ -86,9 +74,6 @@
                 <div class="categoria-img">
                     <img src="IMGCATEGORIA/caffe.png" alt="">
                 </div>
-                <div class="stelline">
-                    <!-- Stelline o valutazione del prodotto... -->
-                </div>
                 <h2>Caffè</h2>
                 <button id="pulsanteVisualizzaCaffe" onclick="visualizzaProdotti('caffe')" class="btm">Visualizza
                     Caffè</button>
@@ -97,9 +82,6 @@
             <div class="box">
                 <div class="categoria-img">
                     <img src="IMGCATEGORIA/snack.png" alt="">
-                </div>
-                <div class="stelline">
-                    <!-- Stelline o valutazione del prodotto... -->
                 </div>
                 <h2>Snack</h2>
                 <button id="pulsanteVisualizzaSnack" onclick="visualizzaProdotti('snack')" class="btm">Visualizza
@@ -118,7 +100,6 @@
                 <a href="#" style='color:black; font-size: 20px ;font-weight:bold'>Io</a>
                 <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam quam perspiciatis in amet
                     incidunt consequatur</h3>
-
                 <p class="pu" align="center">
                     <button id="more">
                         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
@@ -127,7 +108,6 @@
                         </svg> Scoprimi
                     </button>
                 </p>
-
             </div>
             <div class="box">
                 <div class="box-img">
@@ -144,7 +124,6 @@
                         </svg> Scoprimi
                     </button>
                 </p>
-
             </div>
             <div class="box">
                 <div class="box-img">
@@ -167,6 +146,7 @@
     <section class="carrello" id="carrello">
         <h2>Il tuo carrello</h2>
         <table id="carrelloTable"></table>
+        <p id="prezzoTotaleCarrello"></p>
         <button onclick="svuotaCarrello()">Svuota Carrello</button>
     </section>
 
@@ -178,7 +158,7 @@
                 <a href="#"><i class='bx bxl-instagram'></i></a>
                 <a href="#"><i class='bx bxl-twitter'></i></a>
             </div>
-            <div class="contact-text">
+            <div class="links">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Termini di Utilizzo</a>
                 <a href="#">La nostra azienda</a>
@@ -193,7 +173,7 @@
 
         menuIcon.addEventListener('click', () => {
             navbar.classList.toggle('active');
-            menuIcon.classList.toggle('active'); // Aggiunge o rimuove la classe "active" al pulsante
+            menuIcon.classList.toggle('active');
         });
 
         function visualizza() {
@@ -213,20 +193,26 @@
             var buttonId = "pulsanteVisualizza" + categoria.charAt(0).toUpperCase() + categoria.slice(1);
             var button = document.getElementById(buttonId);
 
-            // Crea un array di prodotti simulati
             var prodottiSimulati = [
                 { nome: "Prodotto 1", descrizione: "Descrizione prodotto 1", prezzo: 5.99, quantita: 10 },
                 { nome: "Prodotto 2", descrizione: "Descrizione prodotto 2", prezzo: 3.99, quantita: 15 },
                 { nome: "Prodotto 3", descrizione: "Descrizione prodotto 3", prezzo: 7.99, quantita: 20 }
             ];
 
-            // Se la tabella è attualmente visualizzata, nascondila e svuotala
             if (table.style.display === "block") {
                 table.style.display = "none";
-                table.innerHTML = ''; // Svuota la tabella
+                table.innerHTML = '';
                 button.innerHTML = "Visualizza " + categoria.charAt(0).toUpperCase() + categoria.slice(1);
             } else {
-                // Altrimenti, riempi la tabella con i prodotti simulati
+                var headerRow = document.createElement("tr");
+                var headers = ["Nome", "Descrizione", "Prezzo", "Quantità", "Aggiungi"];
+                headers.forEach(headerText => {
+                    var th = document.createElement("th");
+                    th.textContent = headerText;
+                    headerRow.appendChild(th);
+                });
+                table.appendChild(headerRow);
+
                 prodottiSimulati.forEach(element => {
                     var riga = document.createElement("tr");
                     var col1 = document.createElement("td");
@@ -236,17 +222,20 @@
                     var col5 = document.createElement("td");
                     var inputQuantita = document.createElement("input");
                     var aggiungiAlCarrello = document.createElement("button");
+                    aggiungiAlCarrello.textContent = "Aggiungi";
+                    aggiungiAlCarrello.style.fontSize = "10px"; // Riduci la dimensione del testo
+                    aggiungiAlCarrello.style.padding = "3px 6px"; // Riduci il padding del pulsante
 
                     col1.textContent = element.nome;
                     col2.textContent = element.descrizione;
                     col3.textContent = element.prezzo + "€";
+                    col4.textContent = element.quantita;
                     inputQuantita.type = "number";
                     inputQuantita.min = "1";
                     inputQuantita.max = element.quantita;
-                    col4.appendChild(inputQuantita);
+                    col5.appendChild(inputQuantita);
                     col5.appendChild(aggiungiAlCarrello);
-                    aggiungiAlCarrello.textContent = "Aggiungi al carrello";
-                    aggiungiAlCarrello.onclick = function () { aggiungiProdottoAlCarrello(element.nome, inputQuantita.value) };
+                    aggiungiAlCarrello.onclick = function () { aggiungiProdottoAlCarrello(element.nome, element.prezzo, inputQuantita.value, element.quantita) };
 
                     riga.appendChild(col1);
                     riga.appendChild(col2);
@@ -257,52 +246,78 @@
                     table.appendChild(riga);
                 });
 
-                // Mostra la tabella dei prodotti
                 table.style.display = "block";
                 button.innerHTML = "Nascondi " + categoria.charAt(0).toUpperCase() + categoria.slice(1);
             }
         }
 
-        function aggiungiProdottoAlCarrello(nome, quantita) {
+        function aggiungiProdottoAlCarrello(nome, prezzoUnitario, quantita, quantitaDisponibile) {
             var carrello = JSON.parse(localStorage.getItem("carrello")) || [];
             var prodottoPresente = false;
 
-            // Incrementa la quantità se il prodotto è già presente nel carrello
             for (var i = 0; i < carrello.length; i++) {
                 if (carrello[i].nome === nome) {
-                    carrello[i].quantita += parseInt(quantita);
+                    var nuovaQuantita = carrello[i].quantita + parseInt(quantita);
+                    if (nuovaQuantita > quantitaDisponibile) {
+                        alert("Non puoi aggiungere più prodotti di quanti siano disponibili.");
+                        return;
+                    }
+                    carrello[i].quantita = nuovaQuantita;
+                    carrello[i].prezzoTotale = (carrello[i].prezzoTotale + parseFloat(prezzoUnitario) * parseInt(quantita)).toFixed(2);
                     prodottoPresente = true;
                 }
             }
 
-            // Aggiunge il prodotto al carrello se non è già presente
             if (!prodottoPresente) {
-                carrello.push({ nome: nome, quantita: parseInt(quantita) });
+                carrello.push({ nome: nome, quantita: parseInt(quantita), prezzoUnitario: prezzoUnitario, prezzoTotale: (parseFloat(prezzoUnitario) * parseInt(quantita)).toFixed(2) });
             }
 
             localStorage.setItem("carrello", JSON.stringify(carrello));
             alert("Prodotto aggiunto al carrello!");
-
-            // Aggiorna la visualizzazione del carrello
             visualizzaCarrello();
         }
 
         function visualizzaCarrello() {
             var carrello = JSON.parse(localStorage.getItem("carrello")) || [];
             var table = document.getElementById("carrelloTable");
+            var prezzoTotaleCarrello = document.getElementById("prezzoTotaleCarrello");
             table.innerHTML = '';
+            prezzoTotaleCarrello.innerHTML = '';
+
+            var headerRow = document.createElement("tr");
+            var headers = ["Nome", "Qnt", "Prezzo", "Prezzo tot"];
+            headers.forEach(headerText => {
+                var th = document.createElement("th");
+                th.textContent = headerText;
+                headerRow.appendChild(th);
+            });
+            table.appendChild(headerRow);
+
+            var prezzoTotale = 0;
+
             carrello.forEach(element => {
                 var riga = document.createElement("tr");
                 var col1 = document.createElement("td");
                 var col2 = document.createElement("td");
+                var col3 = document.createElement("td");
+                var col4 = document.createElement("td");
 
                 col1.textContent = element.nome;
                 col2.textContent = element.quantita;
+                col3.textContent = element.prezzoUnitario + "€";
+                col4.textContent = element.prezzoTotale + "€";
 
                 riga.appendChild(col1);
                 riga.appendChild(col2);
+                riga.appendChild(col3);
+                riga.appendChild(col4);
+
                 table.appendChild(riga);
+
+                prezzoTotale += parseFloat(element.prezzoTotale);
             });
+
+            prezzoTotaleCarrello.textContent = "Prezzo totale: " + prezzoTotale.toFixed(2) + "€";
         }
 
         function svuotaCarrello() {
@@ -310,8 +325,21 @@
             visualizzaCarrello();
         }
 
+        function aggiungiProdottoCasualeAlCarrello() {
+            var prodottiSimulati = [
+                { nome: "Prodotto 1", descrizione: "Descrizione prodotto 1", prezzo: 5.99, quantita: 10 },
+                { nome: "Prodotto 2", descrizione: "Descrizione prodotto 2", prezzo: 3.99, quantita: 15 },
+                { nome: "Prodotto 3", descrizione: "Descrizione prodotto 3", prezzo: 7.99, quantita: 20 }
+            ];
+            var prodottoCasuale = prodottiSimulati[Math.floor(Math.random() * prodottiSimulati.length)];
+            var quantitaCasuale = Math.floor(Math.random() * prodottoCasuale.quantita) + 1;
+
+            aggiungiProdottoAlCarrello(prodottoCasuale.nome, prodottoCasuale.prezzo, quantitaCasuale, prodottoCasuale.quantita);
+        }
+
         window.addEventListener('load', (event) => {
             visualizzaCarrello();
+            setInterval(aggiungiProdottoCasualeAlCarrello, 15000);
         });
     </script>
     <script>

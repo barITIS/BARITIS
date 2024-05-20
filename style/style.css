@@ -6,21 +6,30 @@
 
 }
 
-.body{
-   background-color: #F2F2F2;
+.body {
+    background-color: #F2F2F2;
 }
+.banner {
+    background-color: #FF0000;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    top: 300PX;
+}
+
 header {
     background-color: #FF0000;
     display: flex;
     justify-content: space-around;
     align-items: center;
-position: fixed;
+    position: fixed;
     left: 0;
     right: 0;
     top: 0;
     padding: 10px 100px;
     z-index: 1212;
-  
+
     box-shadow: 0 20px 30px black;
 }
 
@@ -36,8 +45,9 @@ position: fixed;
 .menu-icon:hover {
     color: #ff702a;
 }
+
 .logo {
-  
+
     width: 150px;
     height: auto;
     max-width: 100%;
@@ -45,12 +55,13 @@ position: fixed;
 
 
 
-.logo:hover{
+.logo:hover {
     transform: scale(1.1);
     box-shadow: 0 20px 30px black;
     border: #27251F 4px solid;
     border-radius: 25px;
 }
+
 .navbar {
 
     display: flex;
@@ -64,9 +75,10 @@ position: fixed;
 }
 
 .navbar ul {
-align-items: center;
+    align-items: center;
 
 }
+
 .navbar li a {
     color: #D8D0C1;
     font-size: 17px;
@@ -87,9 +99,9 @@ align-items: center;
 
 
 section {
-  width: 100%;
-margin-top: 100px;
-  background-color: whitesmoke;
+  
+    margin-top: 100px;
+    background-color: whitesmoke;
 }
 
 
@@ -99,24 +111,21 @@ margin-top: 100px;
 
 .categoria .box {
     /* Altre regole CSS per i tuoi box... */
-    transition: all 0.3s ease; /* Transizione su tutte le proprietà con durata di 0.3 secondi */
- background-color: #FF0000;
     padding: 20px;
-  
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 18px;
-    text-align: center;
-   margin: 100px 100px;
-}
-
-.box:hover {
-    /* Stili aggiuntivi quando il mouse è sopra il box */
-    transform: scale(1.05); /* Ingrandisce il box del 5% quando il mouse è sopra di esso */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra leggera */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: #FF0000;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
 
 
-.pulsante{ 
+
+
+
+.pulsante {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,17 +135,21 @@ margin-top: 100px;
 
 
 
-  }
- #pulsanteVisualizza {
+}
+
+#pulsanteVisualizza {
     display: flex;
-position: relative;
-top: 70px;
+    position: relative;
+    top: 60px;
+    align-items: center;
     justify-content: center;
     gap: 10px;
     font-family: inherit;
     display: flex;
-    justify-content: center; /* Centrato orizzontalmente */
-    align-items: center; /* Centrato verticalmente */
+    justify-content: center;
+    /* Centrato orizzontalmente */
+    align-items: center;
+    /* Centrato verticalmente */
     margin-top: 20px;
     font-weight: 500;
     text-transform: uppercase;
@@ -151,19 +164,20 @@ top: 70px;
     transform: translate(0px, 0px) rotate(0deg);
     transition: 0.2s;
     box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
-   }
-   
-   #pulsanteVisualizza:hover {
+}
+
+#pulsanteVisualizza:hover {
     color: #516d91;
     background-color: #E5EDF5;
     box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
-   }
-   
-   #pulsanteVisualizza:active {
+}
+
+#pulsanteVisualizza:active {
     box-shadow: none;
-   }
-.categoria .box h2{
-margin-bottom: 20px;
+}
+
+.categoria .box h2 {
+    margin-bottom: 20px;
 }
 
 /* Main section styles */
@@ -184,13 +198,14 @@ margin-bottom: 20px;
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
-    
-  
+
+
 }
 
 .categoria .btm {
     background-color: #333;
     color: #fff;
+    font-size: 10px;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -205,7 +220,8 @@ margin-bottom: 20px;
 
 
 
-i{
+
+i {
     font-size: 30px;
     position: relative;
     top: -5px;
@@ -219,7 +235,8 @@ table {
     border: 2px solid black;
 }
 
-table th, table td {
+table th,
+table td {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #555;
@@ -237,40 +254,63 @@ table tr:hover {
     background-color: #666;
 }
 
-/* Carello section styles */
 .carrello {
+    padding: 15px;
     text-align: center;
+}
+
+
+
+#carrelloTable {
     width: 100%;
-  font-size: 20px;
-    background-color: #f2f2f2;
+    border-collapse: collapse;
+    margin-left: 0;
+    /* Imposta il margine sinistro a zero */
 }
 
-
-
-input {
-    width: 30px; /* Imposta la larghezza desiderata */
+#carrelloTable th,
+#carrelloTable td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
 }
+
 
 .carrello table {
-    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    max-width: 100%;
+    /* Nuova regola */
+    overflow-x: auto;
+    /* Nuova regola */
 }
 
-.carrello th, .carrello td {
-    padding: 10px 20px;
+.carrello th,
+.carrello td {
+    padding: 1px;
+    /* Ridotto a 4px */
+    border: 1px solid #ddd;
+    font-size: 12px;
+    /* Ridotto a 12px */
+    white-space: nowrap;
+   max-width: 10px;
+}
+
+.carrello th {
+    background-color: #f2f2f2;
+    color: #333;
 }
 
 .carrello button {
-    background-color: #333;
-    color: #fff;
-    border: none;
     padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 16px;
 }
 
-.carrello button:hover {
-    background-color: #555;
-}
 
 /* About and Contact section styles */
 .btn {
@@ -318,28 +358,29 @@ input {
 }
 
 
-.service h2{
+.service h2 {
     font-size: 30px;
     margin: 10px;
     color: #27251F;
     text-align: center;
-position: relative;
-top: 20px;
+    position: relative;
+    top: 20px;
 }
 
 
 
-.service #more{
+.service #more {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     font-family: inherit;
     display: flex;
-font-size: 12px;
-
-    justify-content: center; /* Centrato orizzontalmente */
-    align-items: center; /* Centrato verticalmente */
+    font-size: 12px;
+    justify-content: center;
+    /* Centrato orizzontalmente */
+    align-items: center;
+    /* Centrato verticalmente */
     margin-top: 20px;
     font-weight: 500;
     text-transform: uppercase;
@@ -354,17 +395,17 @@ font-size: 12px;
     transform: translate(0px, 0px) rotate(0deg);
     transition: 0.2s;
     box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
-   }
-   
-   .service #more:hover {
+}
+
+.service #more:hover {
     color: #516d91;
     background-color: #E5EDF5;
     box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
-   }
-   
-   .service #more:active {
+}
+
+.service #more:active {
     box-shadow: none;
-   }
+}
 
 /* Footer styles */
 
@@ -398,7 +439,7 @@ font-size: 12px;
 }
 
 .social i:hover {
-    background:  #FF5733;
+    background: #FF5733;
     transition: .5s;
     cursor: pointer;
 }
@@ -406,7 +447,11 @@ font-size: 12px;
 .contact-text {
     margin: 20px 0 20px;
 }
-
+.links a{
+    color: #fff;
+    margin-bottom: 20px;
+    margin: 10px;
+}
 .contact-text a {
     padding: 20px;
     color: #fff;
@@ -418,13 +463,15 @@ font-size: 12px;
 
 .contact p {
     text-align: center;
-    color: #fff;;
+    color: #fff;
+    margin-top: 10px;
     margin-bottom: 30px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
     body {
-        overflow-x: hidden; /* Nasconde la barra di scorrimento orizzontale */
+        overflow-x: hidden;
+        /* Nasconde la barra di scorrimento orizzontale */
     }
 
     .logo {
@@ -460,7 +507,7 @@ font-size: 12px;
         left: 0;
         right: 0;
         padding: 10px 0;
-       
+
     }
 
     .navbar.active li {
@@ -478,14 +525,14 @@ font-size: 12px;
 
 
 
-   
 
- 
+
+
     .service-img {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .service-img .box {
         width: 80%;
         margin: 20px 0;
@@ -493,40 +540,65 @@ font-size: 12px;
 
 
 
-    .service .pulsante{
+    .service .pulsante {
 
-position: relative;
-top: 150px;
+        position: relative;
+        top: 150px;
 
 
     }
+
     .contact {
         display: none;
     }
 
 
-.categoria .box {
- background-color: #FF0000;
-    padding: 5px;
-    width: 100%;
-    margin: 100px auto;
-}
+    .categoria .box {
+        padding: 9px;
 
-.categoria-img img {
- 
-   width: 100px;
+        width: 100%;
+
+    }
+
+    .categoria-img img {
+
+        width: 100px;
+
+
+    }
+
+    .categoria .box table {
+        font-size: 11px;
+        /* Esempio: riduci la dimensione del testo */
+        padding: 1px;
+        /* Esempio: riduci il padding delle celle */
+    }
+
+    .carrello th,
+    .carrello td {
+        padding: 5px; /* Riduci il padding delle celle */
+        font-size: 12px; /* Riduci la dimensione del testo */
+        white-space: nowrap; /* Impedisce il testo di andare a capo */
+    }
     
-  
+
+    .carrello button {
+        padding: 6px 12px;
+        font-size: 12px;
+        /* Ridotto a 12px */
+    }
+
+    .banner{
+    
+        font-size: 9px;
+        /* Ridotto a 12px */
+    }
+
+    #carrelloTable th,
+    #carrelloTable td {
+        padding: 5px;
+        /* Riduci il padding delle celle */
+        font-size: 12px;
+        /* Riduci la dimensione del testo */
+    }
 }
-
-.categoria .box table {
-    font-size: 11px; /* Esempio: riduci la dimensione del testo */
-    padding: 3px; /* Esempio: riduci il padding delle celle */
-}
-
-
-
-
-}
-
-
